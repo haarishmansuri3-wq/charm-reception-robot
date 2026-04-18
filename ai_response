@@ -1,0 +1,44 @@
+import os
+import re
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
+
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+model = genai.GenerativeModel(
+model_name="gemini-1.5-flash",
+generation_config={
+"temperature": 0,
+"top_p": 0.95,
+"top_k": 64,
+"max_output_tokens": 300,
+},
+system_instruction="""
+You are a reception robot at Sanskaar Academy.
+Help visitors politely and answer school-related questions clearly.
+
+School Fees:
+
+* Nursery, LKG, UKG: ₹19,800
+* Class 1 to 6: ₹23,700
+* Class 9 to 10: ₹33,000
+* Class 11 to 12 Commerce: ₹36,300
+* Class 11 to 12 Maths/Biology: ₹42,900
+  """
+  )
+
+def clean_response(text):
+return re.sub(r'[*_`~^#[\]{}<>]', '', text).strip()
+
+def get_gemini_response(user_input):
+if not user_input.strip():
+return ""
+
+```
+chat = model.start_chat(history=[])
+response = chat.send_message(user_input)
+return response.text
+```
+
