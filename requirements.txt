@@ -1,0 +1,7 @@
+gtts
+SpeechRecognition
+python-vlc
+google-generativeai
+RPi.GPIO
+pyaudio
+python-dotenv
