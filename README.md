@@ -60,3 +60,20 @@ python main.py
 * Offline speech recognition
 * More expressive robot face animations
 * Local AI model support
+## Demo Media
+
+### Robot Photo
+
+![Robot Photo](assets/robot_photo.jpg)
+
+### Eye Expression Animation
+
+`assets/EXPRESSIONS.mp4`
+
+### Sample Voice Output
+
+`assets/sample_audio.mp3`
+
+### Full Demo Video
+
+`assets/demo_video.mp4`
